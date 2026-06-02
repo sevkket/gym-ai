@@ -1,0 +1,177 @@
+/* ==========================================================================
+   KUVVET.AI - GENEL STİLLER
+   ==========================================================================
+   Bu dosya tüm uygulamanın temel stil tanımlarını içerir:
+   - Google Fonts üzerinden Bebas Neue (başlıklar), Manrope (metin) ve
+     JetBrains Mono (kod) fontları yüklenir.
+   - Tailwind CSS katmanları (base, components, utilities) aktif edilir.
+   - Proje geneli renk değişkenleri (:root) tanımlanır.
+   - Özel yardımcı sınıflar: .font-heading, .overline, .glass-nav, .hover-lift,
+     .md-content (markdown stilleri), .inp (form giriş alanları), .pulse-dot.
+   ========================================================================== */
+
+/* Google Fonts - Türkçe karakterleri de destekleyen fontlar */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* Tailwind CSS temelleri */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg: #0A0A0A;
+    --surface: #121212;
+    --surface-2: #1A1A1A;
+    --primary: #FF3B30;
+    --primary-hover: #FF5C53;
+    --secondary: #00FFFF;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A1A1AA;
+    --text-muted: #71717A;
+    --border: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(255, 255, 255, 0.2);
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 4%;
+        --foreground: 0 0% 100%;
+        --card: 0 0% 7%;
+        --card-foreground: 0 0% 100%;
+        --popover: 0 0% 10%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 4 100% 59%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 0 0% 10%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 0 0% 10%;
+        --muted-foreground: 0 0% 63%;
+        --accent: 0 0% 14.9%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 0 0% 16%;
+        --input: 0 0% 10%;
+        --ring: 4 100% 59%;
+        --radius: 0.125rem;
+    }
+}
+
+* {
+    border-color: var(--border);
+}
+
+html, body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Manrope', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+}
+
+.font-heading {
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.overline {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #FF3B30;
+}
+
+/* Accent underline bar */
+.accent-bar::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 3px;
+    background: #FF3B30;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+/* Hover lift */
+.hover-lift {
+    transition: transform 150ms ease, border-color 150ms ease;
+}
+.hover-lift:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* Glass nav */
+.glass-nav {
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Form giriş alanları */
+.inp {
+    width: 100%;
+    background: #0A0A0A;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: 'Manrope', sans-serif;
+}
+.inp:focus {
+    outline: none;
+    border-color: #FF3B30;
+    box-shadow: 0 0 0 1px #FF3B30;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #FF3B30; }
+
+/* Selection */
+::selection { background: #FF3B30; color: #fff; }
+
+/* Grain overlay */
+.grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/></svg>");
+    mix-blend-mode: overlay;
+}
+
+/* Markdown readable styles */
+.md-content h1, .md-content h2, .md-content h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.md-content h1 { font-size: 2.25rem; }
+.md-content h2 { font-size: 1.75rem; color: #FF3B30; }
+.md-content h3 { font-size: 1.25rem; }
+.md-content p { margin: 0.5rem 0; line-height: 1.7; color: #d4d4d8; }
+.md-content ul, .md-content ol { padding-left: 1.5rem; margin: 0.5rem 0; color: #d4d4d8; }
+.md-content li { margin: 0.25rem 0; line-height: 1.6; }
+.md-content strong { color: #fff; font-weight: 700; }
+.md-content code { background: #1a1a1a; color: #00FFFF; padding: 2px 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.85em; }
+.md-content hr { border-color: rgba(255,255,255,0.1); margin: 1.5rem 0; }
+
+/* Pulse dot */
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+.pulse-dot { animation: pulse-dot 1.5s ease-in-out infinite; }

@@ -1,0 +1,113 @@
+{
+  "theme": "dark",
+  "archetype": "2_performance_pro",
+  "domain": "fitness_ai_saas",
+  "language": "tr",
+  "colors": {
+    "background": {
+      "default": "#0A0A0A",
+      "surface": "#121212",
+      "surface_elevated": "#1A1A1A"
+    },
+    "primary": {
+      "default": "#FF3B30",
+      "hover": "#FF5C53",
+      "foreground": "#FFFFFF"
+    },
+    "secondary": {
+      "default": "#00FFFF",
+      "hover": "#33FFFF"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA",
+      "muted": "#71717A"
+    },
+    "border": {
+      "default": "rgba(255, 255, 255, 0.1)",
+      "focus": "#FF3B30",
+      "hover": "rgba(255, 255, 255, 0.2)"
+    },
+    "chart_accents": [
+      "#FF3B30",
+      "#00FFFF",
+      "#FFD60A",
+      "#FFFFFF"
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Bebas Neue",
+      "body": "Manrope",
+      "mono": "JetBrains Mono"
+    },
+    "scale": {
+      "h1": "text-5xl sm:text-6xl tracking-tight uppercase",
+      "h2": "text-4xl sm:text-5xl tracking-tight uppercase",
+      "h3": "text-2xl sm:text-3xl tracking-tight uppercase",
+      "h4": "text-xl sm:text-2xl tracking-tight uppercase",
+      "body": "text-base leading-relaxed tracking-wide",
+      "body_small": "text-sm text-zinc-400",
+      "overline": "text-xs tracking-[0.2em] uppercase font-bold text-[#FF3B30]"
+    }
+  },
+  "layout_and_spacing": {
+    "container": "max-w-7xl mx-auto px-6 lg:px-8",
+    "spacing_scale": "generous (p-8, p-12, py-24)",
+    "border_radius": "rounded-none md:rounded-sm (max 4px)",
+    "marketing_grid": "Bento 'Tetris' grid. grid-cols-1 md:grid-cols-12 gap-8. Asymmetrical spans.",
+    "dashboard_grid": "Control Room grid. grid-cols-1 md:grid-cols-4 gap-4. High density, pure black backgrounds, 1px white/10 borders."
+  },
+  "surfaces": {
+    "marketing_cards": "Flat background with 1px border-white/10. Optional 'Tracing Beam' effect on feature highlights. No soft shadows.",
+    "dashboard_cards": "Flat solid #121212, 1px border-border, no shadow. Hover: slight lift (-translate-y-1) and border-white/20.",
+    "header_nav": "Crystal glassmorphism: bg-black/60 backdrop-blur-xl border-b border-white/10.",
+    "ai_chat_bubble": "User: bg-white/10 text-white. AI: bg-[#1A1A1A] text-white border border-[#FF3B30]/30 shadow-[0_0_15px_rgba(255,59,48,0.1)]."
+  },
+  "components": {
+    "buttons": "Sharp corners. Primary: bg-[#FF3B30] text-white font-bold hover:bg-[#FF5C53] transition-colors. Secondary: transparent border border-white/20 hover:border-white text-white.",
+    "inputs": "bg-[#121212] border-white/10 text-white focus:ring-1 focus:ring-[#FF3B30] focus:border-[#FF3B30] rounded-none md:rounded-sm",
+    "charts": "Recharts. Transparent background. Data lines in neon red (#FF3B30) or cyan (#00FFFF). Minimal grid lines (white/5).",
+    "icons": "Use @phosphor-icons/react (Bold or Duotone). Avoid thin/delicate icons."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://images.unsplash.com/photo-1543300722-222718fd8509?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHw0fHxpbnRlbnNlJTIwZ3ltJTIwd29ya291dCUyMGRhcmt8ZW58MHx8fHwxNzc2NzYwNzEzfDA&ixlib=rb-4.1.0&q=85",
+        "category": "hero_background",
+        "description": "Dark moody gym background with man on weight bench"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1605296867724-fa87a8ef53fd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwzfHxpbnRlbnNlJTIwZ3ltJTIwd29ya291dCUyMGRhcmt8ZW58MHx8fHwxNzc2NzYwNzEzfDA&ixlib=rb-4.1.0&q=85",
+        "category": "feature_workout",
+        "description": "Woman in intense workout"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1769120062656-23adba3790b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwzfHxuZW9uJTIwZ3JpZCUyMGRhcmslMjBhYnN0cmFjdHxlbnwwfHx8fDE3NzY3NjA3MjN8MA&ixlib=rb-4.1.0&q=85",
+        "category": "ai_feature_bg",
+        "description": "Neon grid/abstract network for AI tech section"
+      },
+      {
+        "url": "https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "feature_diet",
+        "description": "Healthy meal dark background"
+      }
+    ]
+  },
+  "animation_and_motion": {
+    "interactions": "Fast, sharp transitions. duration-150 ease-in-out.",
+    "page_load": "Framer Motion staggered fade-up for grids and lists.",
+    "hover_states": "ALWAYS explicitly set text color on hover. Example: hover:bg-[#FF3B30] hover:text-white"
+  },
+  "instructions_to_main_agent": [
+    "You are building an AI-powered gym website in Turkish. Ensure all UI text is in Turkish.",
+    "CRITICAL: Use pure HTML + Tailwind CSS for marketing page layouts. Do not use Shadcn 'Card' components for the landing page.",
+    "CRITICAL: Use customized Shadcn UI components for complex interactions like Forms, Modals, Inputs, Tables, Tabs, and the Dashboard interface.",
+    "CRITICAL: DO NOT USE PURPLE or TEAL colors anywhere.",
+    "CRITICAL: Include `data-testid` attributes on ALL interactive and key informational elements using kebab-case role-based names (e.g., data-testid='workout-generate-button').",
+    "CRITICAL: Apply a dark overlay (bg-black/60) to hero images to ensure the massive Bebas Neue text is perfectly legible.",
+    "Follow 'Tactical Minimalism' - rely on 1px borders instead of heavy box-shadows. Use Electric Blaze (#FF3B30) for CTAs and focus states.",
+    "Ensure contrast ratios meet APCA standards. Never use pure #000000, tint it slightly with blue (e.g., #0A0A0A).",
+    "Run `yarn add @phosphor-icons/react` for icons."
+  ]
+}
